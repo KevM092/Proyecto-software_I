@@ -16,11 +16,8 @@
     <sprite>sprites\sprite1</sprite>
     <sprite>sprites\sprite3</sprite>
     <sprite>sprites\sprite4</sprite>
-<<<<<<< HEAD
     <sprite>sprites\hormiga</sprite>
-=======
     <sprite>sprites\Mosca</sprite>
->>>>>>> origin/CreacionCarpeta/Estuardo
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
