@@ -4,10 +4,39 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
-  <sprites name="sprites"/>
-  <backgrounds name="background"/>
+  <sounds name="sound">
+    <sound>sound\fondo1</sound>
+    <sound>sound\sonido1</sound>
+  </sounds>
+  <sprites name="sprites">
+    <sprite>sprites\sprite0</sprite>
+    <sprite>sprites\sprite1</sprite>
+    <sprite>sprites\sprite3</sprite>
+    <sprite>sprites\mascara_caracol</sprite>
+    <sprite>sprites\sprite4</sprite>
+    <sprite>sprites\Escarabajo</sprite>
+    <sprite>sprites\debug_sp</sprite>
+  </sprites>
+  <backgrounds name="background">
+    <background>background\background0</background>
+  </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\pulsacion.gml</script>
+  </scripts>
+  <objects name="objects">
+    <object>objects\Caracol</object>
+    <object>objects\Control_obj</object>
+    <object>objects\Tesoro</object>
+    <object>objects\_100</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\room0</room>
+  </rooms>
+  <constants number="2">
+    <constant name="GM_build_date">41897.9846303588</constant>
+    <constant name="GM_version">'1.0.1'</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>
