@@ -9,14 +9,13 @@
     <sound>sound\sonido1</sound>
   </sounds>
   <sprites name="sprites">
+    <sprite>sprites\debug_sp</sprite>
+    <sprite>sprites\Escarabajo</sprite>
+    <sprite>sprites\mascara_caracol</sprite>
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite1</sprite>
     <sprite>sprites\sprite3</sprite>
-    <sprite>sprites\mascara_caracol</sprite>
     <sprite>sprites\sprite4</sprite>
-    <sprite>sprites\Escarabajo</sprite>
-    <sprite>sprites\debug_sp</sprite>
-    <sprite>sprites\Hormiga</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
