@@ -16,6 +16,7 @@
     <sprite>sprites\sprite1</sprite>
     <sprite>sprites\sprite3</sprite>
     <sprite>sprites\sprite4</sprite>
+    <sprite>sprites\Mosca</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
