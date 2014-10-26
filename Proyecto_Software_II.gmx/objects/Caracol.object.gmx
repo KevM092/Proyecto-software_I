@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>Escarabajo</maskName>
+  <maskName>mascara_caracol</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>vel=0.5//////0.5
+            <string>vel=1//////0.5
 image_speed=vel/4
 vitalidad=5
 mv=0
