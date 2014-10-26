@@ -29,6 +29,7 @@
 image_speed=vel/4
 vitalidad=5
 mv=0
+comiendo=0
 mitecla=noone
 miletra=vk_space
 /////global.tecla=virtual_key_add(x,y,64,64,vk_up)
@@ -59,6 +60,29 @@ miletra=vk_space
 virtual_key_delete(mitecla)
 ds_queue_enqueue(global.letras,miletra)
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>comiendo=0
 </string>
           </argument>
         </arguments>
@@ -108,6 +132,11 @@ image_speed=vel/4
             <string>if mitecla!=noone 
 virtual_key_delete(mitecla)
 
+if mv=2 &amp;&amp; place_meeting(x,y,Tesoro)=false
+{
+mv=0
+}
+
 mitecla=virtual_key_add(x-32,y-32,64,64,ord(miletra))
 if global.debugeo=1
 virtual_key_show(mitecla)
@@ -149,7 +178,7 @@ pulsacion()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>mv=1
+            <string>mv=2
 motion_set(0,0)
 </string>
           </argument>
