@@ -126,6 +126,7 @@ draw_text(288,160,ds_queue_tail(global.letras))
 draw_text(288,192,ds_queue_size(global.letras))
 draw_text(224,192,string(display_get_orientation()))
 draw_sprite(debug_sp,0,352,64)
+draw_text(32,64,string(Tesoro.cantidad))
 
 if display_get_orientation()==display_portrait
 {
