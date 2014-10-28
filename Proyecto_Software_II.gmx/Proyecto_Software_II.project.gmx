@@ -19,6 +19,8 @@
     <sprite>sprites\hormiga</sprite>
     <sprite>sprites\Mosca</sprite>
     <sprite>sprites\Cucaracha</sprite>
+    <sprite>sprites\dulcetipico</sprite>
+    <sprite>sprites\papa</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
