@@ -32,7 +32,7 @@ global.direccion=90
 obj_temp=noone
 mitecla=virtual_key_add(352,64,32,32,vk_space)
 device_mouse_dbclick_enable(false)
-display_set_gui_size(448,640)
+display_set_gui_size(405,720)///////448,640
 global.letras=ds_queue_create()
 ds_queue_enqueue(global.letras,'A')
 ds_queue_enqueue(global.letras,'B')
@@ -66,23 +66,23 @@ ds_queue_enqueue(global.letras,'F')
 dec=irandom(3)
 if dec=0
 {
-x1=irandom_range(0,448)
+x1=irandom_range(0,405)
 y1=-(32)
 }
 if dec=1
 {
-x1=480
-y1=irandom_range(0,640)
+x1=437
+y1=irandom_range(0,720)
 }
 if dec=2
 {
-x1=irandom_range(0,448)
-y1=(672)
+x1=irandom_range(0,405)
+y1=(752)
 }
 if dec=3
 {
 x1=-(32)
-y1=irandom_range(0,640)
+y1=irandom_range(0,720)
 }
 if ds_queue_size(global.letras)&gt;0
 {
