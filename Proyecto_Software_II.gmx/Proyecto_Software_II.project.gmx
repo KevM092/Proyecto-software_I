@@ -22,6 +22,7 @@
     <sprite>sprites\dulcetipico</sprite>
     <sprite>sprites\papa</sprite>
     <sprite>sprites\Chocolate</sprite>
+    <sprite>sprites\Naranja</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
