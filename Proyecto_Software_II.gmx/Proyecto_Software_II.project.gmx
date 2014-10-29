@@ -21,6 +21,8 @@
     <sprite>sprites\Cucaracha</sprite>
     <sprite>sprites\dulcetipico</sprite>
     <sprite>sprites\papa</sprite>
+    <sprite>sprites\Naranja</sprite>
+    <sprite>sprites\Manzana</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
