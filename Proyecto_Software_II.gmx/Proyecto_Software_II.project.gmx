@@ -24,10 +24,12 @@
     <sprite>sprites\Chocolate</sprite>
     <sprite>sprites\Naranja</sprite>
     <sprite>sprites\Manzana</sprite>
+    <sprite>sprites\botones_sp</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
     <background>background\background1</background>
+    <background>background\background2</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -38,8 +40,11 @@
     <object>objects\Control_obj</object>
     <object>objects\Tesoro</object>
     <object>objects\_100</object>
+    <object>objects\Btn1</object>
+    <object>objects\Btn2</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room1</room>
     <room>rooms\room0</room>
   </rooms>
   <constants number="2">

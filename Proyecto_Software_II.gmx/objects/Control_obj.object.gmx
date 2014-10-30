@@ -32,7 +32,7 @@ global.direccion=90
 obj_temp=noone
 mitecla=virtual_key_add(352,64,32,32,vk_space)
 device_mouse_dbclick_enable(false)
-display_set_gui_size(405,720)///////448,640
+display_set_gui_size(480,720)///////448,640
 global.letras=ds_queue_create()
 ds_queue_enqueue(global.letras,'A')
 ds_queue_enqueue(global.letras,'B')
