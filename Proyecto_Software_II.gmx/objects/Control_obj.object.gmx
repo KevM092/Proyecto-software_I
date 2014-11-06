@@ -30,10 +30,10 @@ global.punteo=0
 global.debugeo=-1
 global.direccion=90
 global.fuentejuego=noone///no existe la fuente de texto apunta a null
-global.fuentejuego=font_add_sprite(Num_sp,ord('0'),false,2)///crea una nueva fuente a partir de un sprite
+global.fuentejuego=font_add_sprite_ext(Num_sp,"0123456789ABCDEFGHIJKLM",false,1)///crea una nueva fuente a partir de un sprite
 global.factor=0.3 /// factor del tamaño del texto, para escalarlo
 obj_temp=noone /// variable temporal que puede almacenar un objeto apunta a null
-mitecla=virtual_key_add(352-16,64-16,32,32,vk_space) /// añade una nueva tecla virtual "espacio"
+mitecla=virtual_key_add(448-16,80-16,32,32,vk_space) /// añade una nueva tecla virtual "espacio"
 device_mouse_dbclick_enable(false)/// desactiva el doble clic en los dispositivos moviles
 display_set_gui_size(480,720)/////// crea una interfaz virtual
 global.letras=ds_queue_create() //// crea una estructura de datos de tipo cola
@@ -155,20 +155,20 @@ if (debug_mode=true)
 {
 /* este apartado solo se activa si el juego esta en modo debug de lo contrario
 toda esta informacion no se desplegua */
-draw_text_transformed(32,32,string(global.punteo),0.2,0.2,0)///desplegua la puntuacion acumulada
-draw_text_transformed(96,32,string(fps),0.2,0.2,0)///despliega los cuadros por segundo a los que corre el juego
-draw_text_transformed(160,32,string(instance_count),0.2,0.2,0)///despliega el numero de instancias activas
-draw_text_transformed(224,32,string(display_get_width()),0.2,0.2,0)///despliea el ancho de la resolucion del dispositivo
-draw_text_transformed(288,32,string(display_get_height()),0.2,0.2,0)///despliega el alto de la resolucion del dispositivo
+draw_text_transformed(32,32,string(global.punteo),global.factor,global.factor,0)///desplegua la puntuacion acumulada
+draw_text_transformed(96,32,string(fps),global.factor,global.factor,0)///despliega los cuadros por segundo a los que corre el juego
+draw_text_transformed(176,32,string(instance_count),global.factor,global.factor,0)///despliega el numero de instancias activas
+draw_text_transformed(224,32,string(display_get_width()),global.factor,global.factor,0)///despliea el ancho de la resolucion del dispositivo
+draw_text_transformed(352,32,string(display_get_height()),global.factor,global.factor,0)///despliega el alto de la resolucion del dispositivo
 //////
-draw_text_transformed(224,64,string(display_get_gui_width()),0.2,0.2,0)///despliega el ancho de la interfaz del juego
-draw_text_transformed(288,64,string(display_get_gui_height()),0.2,0.2,0)///despliega el alto de la interzaz del juego 
-draw_text_transformed(288,128,ds_queue_head(global.letras),0.2,0.2,0)///despliegua el elemento que esta "a la cabeza" de la cola
-draw_text_transformed(288,160,ds_queue_tail(global.letras),0.2,0.2,0)///despliegua el elemento que esta "al final de la cola"
-draw_text_transformed(288,192,ds_queue_size(global.letras),0.2,0.2,0)///despliegua el tamaño de la cola
-draw_text_transformed(224,192,string(display_get_orientation()),0.2,0.2,0)///despliegua la orientacion del dispositivo
-draw_sprite(debug_sp,0,352,64) /// dibuja el boton para testear las mascaras de colision
-draw_text_transformed(32,64,string(Tesoro.cantidad),0.2,0.2,0)////despliega la cantidad del tesoro que queda (0%-100%)
+draw_text_transformed(224,80,string(display_get_gui_width()),global.factor,global.factor,0)///despliega el ancho de la interfaz del juego
+draw_text_transformed(352,80,string(display_get_gui_height()),global.factor,global.factor,0)///despliega el alto de la interzaz del juego 
+draw_text_transformed(288,128,ds_queue_head(global.letras),global.factor,global.factor,0)///despliegua el elemento que esta "a la cabeza" de la cola
+draw_text_transformed(288,160,ds_queue_tail(global.letras),global.factor,global.factor,0)///despliegua el elemento que esta "al final de la cola"
+draw_text_transformed(288,192,ds_queue_size(global.letras),global.factor,global.factor,0)///despliegua el tamaño de la cola
+draw_text_transformed(224,192,string(display_get_orientation()),global.factor,global.factor,0)///despliegua la orientacion del dispositivo
+draw_sprite(debug_sp,0,448,80) /// dibuja el boton para testear las mascaras de colision
+draw_text_transformed(32,80,string(Tesoro.cantidad),global.factor,global.factor,0)////despliega la cantidad del tesoro que queda (0%-100%)
 }
 //////////// cambia la direccion global dependiendo de la orientacion del dispositivo horizontal/vertical
 if display_get_orientation()==display_portrait
