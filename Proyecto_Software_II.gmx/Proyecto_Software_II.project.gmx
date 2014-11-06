@@ -25,6 +25,8 @@
     <sprite>sprites\Naranja</sprite>
     <sprite>sprites\Manzana</sprite>
     <sprite>sprites\botones_sp</sprite>
+    <sprite>sprites\Num_sp</sprite>
+    <sprite>sprites\Nivel_sp</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
