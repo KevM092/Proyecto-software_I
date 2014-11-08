@@ -27,13 +27,21 @@
             <kind>1</kind>
             <string>alarm[0]=20
 global.punteo=0
-global.debugeo=1
+global.debugeo=-1
 global.direccion=90
-obj_temp=noone
-mitecla=virtual_key_add(352,64,32,32,vk_space)
-device_mouse_dbclick_enable(false)
-display_set_gui_size(448,640)
-global.letras=ds_queue_create()
+global.fuentejuego=noone///no existe la fuente de texto apunta a null
+global.fuentejuego=font_add_sprite_ext(Num_sp,"0123456789ABCDEFGHIJKLM",false,1)///crea una nueva fuente a partir de un sprite
+global.factor=0.3 /// factor del tamaño del texto, para escalarlo
+obj_temp=noone /// variable temporal que puede almacenar un objeto apunta a null
+mitecla=virtual_key_add(448-16,80-16,32,32,vk_space) /// añade una nueva tecla virtual "espacio"
+device_mouse_dbclick_enable(false)/// desactiva el doble clic en los dispositivos moviles
+display_set_gui_size(480,720)/////// crea una interfaz virtual
+global.letras=ds_queue_create() //// crea una estructura de datos de tipo cola
+/*
+aqui se encolan las teclas virtuales que seran asignadas a los bichos dinamicamente
+cada una representa una letra de la A hasta la letra que se quiera crear para la cantidad
+de bichos que puedan haber en pantalla, por ahora solo 6
+*/
 ds_queue_enqueue(global.letras,'A')
 ds_queue_enqueue(global.letras,'B')
 ds_queue_enqueue(global.letras,'C')
@@ -66,23 +74,23 @@ ds_queue_enqueue(global.letras,'F')
 dec=irandom(3)
 if dec=0
 {
-x1=irandom_range(0,448)
+x1=irandom_range(0,480)
 y1=-(32)
 }
 if dec=1
 {
-x1=480
-y1=irandom_range(0,640)
+x1=512
+y1=irandom_range(0,720)
 }
 if dec=2
 {
-x1=irandom_range(0,448)
-y1=(672)
+x1=irandom_range(0,480)
+y1=(752)
 }
 if dec=3
 {
 x1=-(32)
-y1=irandom_range(0,640)
+y1=irandom_range(0,720)
 }
 if ds_queue_size(global.letras)&gt;0
 {
@@ -91,6 +99,33 @@ obj_temp.miletra=ds_queue_head(global.letras)
 ds_queue_dequeue(global.letras)
 }
 alarm[0]=200
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if font_exists(global.fuentejuego)
+{
+font_delete(global.fuentejuego)
+show_message("Eliminado")
+}
 </string>
           </argument>
         </arguments>
@@ -113,21 +148,29 @@ alarm[0]=200
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(32,32,string(global.punteo))
-draw_text(96,32,string(fps))
-draw_text(160,32,string(instance_count))
-draw_text(224,32,string(display_get_width()))
-draw_text(288,32,string(display_get_height()))
+            <string>draw_set_colour(c_white)/// el color de dibujado cambia a blanco, lo que en este lenguaje es igual a neutral
+draw_set_font(global.fuentejuego) /// establece la fuente de texto para el juego
+///
+if (debug_mode=true)
+{
+/* este apartado solo se activa si el juego esta en modo debug de lo contrario
+toda esta informacion no se desplegua */
+draw_text_transformed(32,32,string(global.punteo),global.factor,global.factor,0)///desplegua la puntuacion acumulada
+draw_text_transformed(96,32,string(fps),global.factor,global.factor,0)///despliega los cuadros por segundo a los que corre el juego
+draw_text_transformed(176,32,string(instance_count),global.factor,global.factor,0)///despliega el numero de instancias activas
+draw_text_transformed(224,32,string(display_get_width()),global.factor,global.factor,0)///despliea el ancho de la resolucion del dispositivo
+draw_text_transformed(352,32,string(display_get_height()),global.factor,global.factor,0)///despliega el alto de la resolucion del dispositivo
 //////
-draw_text(224,64,string(display_get_gui_width()))
-draw_text(288,64,string(display_get_gui_height()))
-draw_text(288,128,ds_queue_head(global.letras))
-draw_text(288,160,ds_queue_tail(global.letras))
-draw_text(288,192,ds_queue_size(global.letras))
-draw_text(224,192,string(display_get_orientation()))
-draw_sprite(debug_sp,0,352,64)
-draw_text(32,64,string(Tesoro.cantidad))
-
+draw_text_transformed(224,80,string(display_get_gui_width()),global.factor,global.factor,0)///despliega el ancho de la interfaz del juego
+draw_text_transformed(352,80,string(display_get_gui_height()),global.factor,global.factor,0)///despliega el alto de la interzaz del juego 
+draw_text_transformed(288,128,ds_queue_head(global.letras),global.factor,global.factor,0)///despliegua el elemento que esta "a la cabeza" de la cola
+draw_text_transformed(288,160,ds_queue_tail(global.letras),global.factor,global.factor,0)///despliegua el elemento que esta "al final de la cola"
+draw_text_transformed(288,192,ds_queue_size(global.letras),global.factor,global.factor,0)///despliegua el tamaño de la cola
+draw_text_transformed(224,192,string(display_get_orientation()),global.factor,global.factor,0)///despliegua la orientacion del dispositivo
+draw_sprite(debug_sp,0,448,80) /// dibuja el boton para testear las mascaras de colision
+draw_text_transformed(32,80,string(Tesoro.cantidad),global.factor,global.factor,0)////despliega la cantidad del tesoro que queda (0%-100%)
+}
+//////////// cambia la direccion global dependiendo de la orientacion del dispositivo horizontal/vertical
 if display_get_orientation()==display_portrait
 {
 global.direccion=90

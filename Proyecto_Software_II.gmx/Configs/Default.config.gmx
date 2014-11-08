@@ -57,7 +57,7 @@
     <option_android_pocketchange_test_enable>0</option_android_pocketchange_test_enable>
     <option_android_push_enable>0</option_android_push_enable>
     <option_android_push_id></option_android_push_id>
-    <option_android_scale>0</option_android_scale>
+    <option_android_scale>-1</option_android_scale>
     <option_android_set_device_id></option_android_set_device_id>
     <option_android_splash_png>Configs\Default\android\splash.png</option_android_splash_png>
     <option_android_texture_page>1024</option_android_texture_page>
