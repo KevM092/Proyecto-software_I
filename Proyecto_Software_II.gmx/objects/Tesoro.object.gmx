@@ -63,8 +63,10 @@ if cantidad&lt;=0
 {
 image_single=10
 audio_stop_all()
-show_message("¡Los insectos se comieron tu comida!")
-game_restart()
+///show_message("¡Los insectos se comieron tu comida!")
+///game_restart()
+global.GO=1
+Control_obj.alarm[1]=250
 }
 </string>
           </argument>

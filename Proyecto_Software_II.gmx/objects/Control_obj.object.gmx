@@ -25,13 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0]=20
-global.punteo=0
-global.debugeo=-1
-global.direccion=90
+            <string>alarm[0]=20 ///temporizador para crear bichos
+global.punteo=0/// variable Global del punteo
+global.debugeo=-1///bandera para indicar si se esta debugeando el codigo
+global.direccion=90///direccion global
 global.fuentejuego=noone///no existe la fuente de texto apunta a null
-global.fuentejuego=font_add_sprite_ext(Num_sp,"0123456789ABCDEFGHIJKLM",false,1)///crea una nueva fuente a partir de un sprite
-global.factor=0.3 /// factor del tamaño del texto, para escalarlo
+global.fuentejuego=font_add_sprite_ext(Num_sp,"0123456789ABCDEFGHIJKLM",false,0)///crea una nueva fuente a partir de un sprite
+global.factor=0.2 /// factor del tamaño del texto, para escalarlo
+global.monedas=9999 /// variable para guardar monedas del juego
+global.GO=0////variable para contralar el fin del juego (Game Over)
+global.cantidad=100/////para guardar la cantidad de comida que queda
 obj_temp=noone /// variable temporal que puede almacenar un objeto apunta a null
 mitecla=virtual_key_add(448-16,80-16,32,32,vk_space) /// añade una nueva tecla virtual "espacio"
 device_mouse_dbclick_enable(false)/// desactiva el doble clic en los dispositivos moviles
@@ -48,6 +51,29 @@ ds_queue_enqueue(global.letras,'C')
 ds_queue_enqueue(global.letras,'D')
 ds_queue_enqueue(global.letras,'E')
 ds_queue_enqueue(global.letras,'F')
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>game_restart()
 </string>
           </argument>
         </arguments>
@@ -92,7 +118,7 @@ if dec=3
 x1=-(32)
 y1=irandom_range(0,720)
 }
-if ds_queue_size(global.letras)&gt;0
+if ds_queue_size(global.letras)&gt;0 &amp;&amp; global.GO==0
 {
 obj_temp=instance_create(x1,y1,Caracol)
 obj_temp.miletra=ds_queue_head(global.letras)
@@ -150,25 +176,23 @@ show_message("Eliminado")
             <kind>1</kind>
             <string>draw_set_colour(c_white)/// el color de dibujado cambia a blanco, lo que en este lenguaje es igual a neutral
 draw_set_font(global.fuentejuego) /// establece la fuente de texto para el juego
+if instance_exists(Tesoro) ///revisa si existe el objeto Tesoro
+global.cantidad=Tesoro.cantidad /// si el objeto existe entonces guarda el valor de su atributo -cantidad- en la variable global cantidad
+else /// si no existe
+global.cantidad=0 ////la variable global cantidad se hace 0
 ///
 if (debug_mode=true)
 {
-/* este apartado solo se activa si el juego esta en modo debug de lo contrario
-toda esta informacion no se desplegua */
-draw_text_transformed(32,32,string(global.punteo),global.factor,global.factor,0)///desplegua la puntuacion acumulada
-draw_text_transformed(96,32,string(fps),global.factor,global.factor,0)///despliega los cuadros por segundo a los que corre el juego
-draw_text_transformed(176,32,string(instance_count),global.factor,global.factor,0)///despliega el numero de instancias activas
-draw_text_transformed(224,32,string(display_get_width()),global.factor,global.factor,0)///despliea el ancho de la resolucion del dispositivo
-draw_text_transformed(352,32,string(display_get_height()),global.factor,global.factor,0)///despliega el alto de la resolucion del dispositivo
-//////
-draw_text_transformed(224,80,string(display_get_gui_width()),global.factor,global.factor,0)///despliega el ancho de la interfaz del juego
-draw_text_transformed(352,80,string(display_get_gui_height()),global.factor,global.factor,0)///despliega el alto de la interzaz del juego 
-draw_text_transformed(288,128,ds_queue_head(global.letras),global.factor,global.factor,0)///despliegua el elemento que esta "a la cabeza" de la cola
-draw_text_transformed(288,160,ds_queue_tail(global.letras),global.factor,global.factor,0)///despliegua el elemento que esta "al final de la cola"
-draw_text_transformed(288,192,ds_queue_size(global.letras),global.factor,global.factor,0)///despliegua el tamaño de la cola
-draw_text_transformed(224,192,string(display_get_orientation()),global.factor,global.factor,0)///despliegua la orientacion del dispositivo
-draw_sprite(debug_sp,0,448,80) /// dibuja el boton para testear las mascaras de colision
-draw_text_transformed(32,80,string(Tesoro.cantidad),global.factor,global.factor,0)////despliega la cantidad del tesoro que queda (0%-100%)
+Hud_debugeo() /// esto llama al script que muestra valores de las variables si esta en modo debugeo
+}
+else
+{
+Hud_status()
+}
+/////////////control de cambio de Niveles y Fin del Juego
+if global.GO=1
+{
+Fin_Juego()
 }
 //////////// cambia la direccion global dependiendo de la orientacion del dispositivo horizontal/vertical
 if display_get_orientation()==display_portrait

@@ -30,8 +30,9 @@ img[0]=noone
 img[1]=Mosca
 img[2]=hormiga
 img[3]=Cucaracha
-img[4]=sprite0
-sprite_index=img[irandom_range(1,4)]
+img[4]=Caracol_sp
+img[5]=Escarabajo
+sprite_index=img[irandom_range(1,5)]
 /////
 vel=1//////0.5
 image_speed=vel/4

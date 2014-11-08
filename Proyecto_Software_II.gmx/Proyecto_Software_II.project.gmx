@@ -12,10 +12,10 @@
     <sprite>sprites\debug_sp</sprite>
     <sprite>sprites\Escarabajo</sprite>
     <sprite>sprites\mascara_caracol</sprite>
-    <sprite>sprites\sprite0</sprite>
+    <sprite>sprites\Caracol_sp</sprite>
     <sprite>sprites\sprite1</sprite>
     <sprite>sprites\sprite3</sprite>
-    <sprite>sprites\sprite4</sprite>
+    <sprite>sprites\mini_huds_sp</sprite>
     <sprite>sprites\hormiga</sprite>
     <sprite>sprites\Mosca</sprite>
     <sprite>sprites\Cucaracha</sprite>
@@ -27,15 +27,21 @@
     <sprite>sprites\botones_sp</sprite>
     <sprite>sprites\Num_sp</sprite>
     <sprite>sprites\Nivel_sp</sprite>
+    <sprite>sprites\Boton_item_sp</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
     <background>background\background1</background>
     <background>background\background2</background>
+    <background>background\Hud_fondo</background>
+    <background>background\GO_fondo</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\pulsacion.gml</script>
+    <script>scripts\Hud_debugeo.gml</script>
+    <script>scripts\Hud_status.gml</script>
+    <script>scripts\Fin_Juego.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\Caracol</object>

@@ -25,12 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_single=1
+            <string>image_single=0
 image_alpha=1
 image_angle=(global.direccion-90)
 direction=global.direccion
 speed=1
 alarm[0]=4
+mipunteo=100
+global.punteo+=mipunteo
 </string>
           </argument>
         </arguments>
@@ -53,7 +55,7 @@ alarm[0]=4
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.punteo+=500
+            <string>///global.punteo+=100000
 </string>
           </argument>
         </arguments>
