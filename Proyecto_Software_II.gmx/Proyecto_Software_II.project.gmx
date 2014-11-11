@@ -7,27 +7,32 @@
   <sounds name="sound">
     <sound>sound\fondo1</sound>
     <sound>sound\sonido1</sound>
+    <sound>sound\moneda_snd</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\debug_sp</sprite>
-    <sprite>sprites\Escarabajo</sprite>
-    <sprite>sprites\mascara_caracol</sprite>
+    <sprite>sprites\Boton_item_sp</sprite>
+    <sprite>sprites\botones_sp</sprite>
     <sprite>sprites\Caracol_sp</sprite>
+    <sprite>sprites\Chocolate</sprite>
+    <sprite>sprites\Cucaracha</sprite>
+    <sprite>sprites\debug_sp</sprite>
+    <sprite>sprites\dulcetipico</sprite>
+    <sprite>sprites\Escarabajo</sprite>
+    <sprite>sprites\hormiga</sprite>
+    <sprite>sprites\Manzana</sprite>
+    <sprite>sprites\mascara_caracol</sprite>
+    <sprite>sprites\mini_huds_sp</sprite>
+    <sprite>sprites\Moneda_bronce_sp</sprite>
+    <sprite>sprites\Moneda_oro_sp</sprite>
+    <sprite>sprites\Moneda_plata_sp</sprite>
+    <sprite>sprites\Mosca</sprite>
+    <sprite>sprites\Naranja</sprite>
+    <sprite>sprites\Nivel_sp</sprite>
+    <sprite>sprites\Num_sp</sprite>
+    <sprite>sprites\papa</sprite>
     <sprite>sprites\sprite1</sprite>
     <sprite>sprites\sprite3</sprite>
-    <sprite>sprites\mini_huds_sp</sprite>
-    <sprite>sprites\hormiga</sprite>
-    <sprite>sprites\Mosca</sprite>
-    <sprite>sprites\Cucaracha</sprite>
-    <sprite>sprites\dulcetipico</sprite>
-    <sprite>sprites\papa</sprite>
-    <sprite>sprites\Chocolate</sprite>
-    <sprite>sprites\Naranja</sprite>
-    <sprite>sprites\Manzana</sprite>
-    <sprite>sprites\botones_sp</sprite>
-    <sprite>sprites\Num_sp</sprite>
-    <sprite>sprites\Nivel_sp</sprite>
-    <sprite>sprites\Boton_item_sp</sprite>
+    <sprite>sprites\brillo_sp</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -42,6 +47,7 @@
     <script>scripts\Hud_debugeo.gml</script>
     <script>scripts\Hud_status.gml</script>
     <script>scripts\Fin_Juego.gml</script>
+    <script>scripts\pulsacion_moneda.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\Caracol</object>
@@ -50,6 +56,8 @@
     <object>objects\_100</object>
     <object>objects\Btn1</object>
     <object>objects\Btn2</object>
+    <object>objects\Moneda_obj</object>
+    <object>objects\brillo_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
