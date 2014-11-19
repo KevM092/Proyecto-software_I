@@ -35,6 +35,14 @@
     <sprite>sprites\brillo_sp</sprite>
     <sprite>sprites\Lampara_sp</sprite>
     <sprite>sprites\Repelentes_sp</sprite>
+    <sprite>sprites\Gas_sp</sprite>
+    <sprite>sprites\Resplandor_sp</sprite>
+    <sprite>sprites\Red_sp</sprite>
+    <sprite>sprites\maseta_sp</sprite>
+    <sprite>sprites\Planta_carnivora_sp</sprite>
+    <sprite>sprites\Comiendo_sp</sprite>
+    <sprite>sprites\Tienda_sp</sprite>
+    <sprite>sprites\Boton_Compra</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -42,6 +50,7 @@
     <background>background\background2</background>
     <background>background\Hud_fondo</background>
     <background>background\GO_fondo</background>
+    <background>background\background5</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -54,6 +63,9 @@
     <script>scripts\Init_Control.gml</script>
     <script>scripts\Init_Teclas_Bichos.gml</script>
     <script>scripts\Init_Teclas_Monedas.gml</script>
+    <script>scripts\Modo_Supervivencia.gml</script>
+    <script>scripts\Teclas_Items.gml</script>
+    <script>scripts\Control_items.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\Caracol</object>
@@ -61,14 +73,31 @@
     <object>objects\Tesoro</object>
     <object>objects\_100</object>
     <object>objects\Btn1</object>
+    <object>objects\Btn3</object>
     <object>objects\Btn2</object>
     <object>objects\Moneda_obj</object>
     <object>objects\brillo_obj</object>
     <object>objects\Lampara_obj</object>
     <object>objects\Pariente_objetivos</object>
+    <object>objects\Hormiga_obj</object>
+    <object>objects\Mosca_obj</object>
+    <object>objects\Cucaracha_obj</object>
+    <object>objects\Caracol_obj</object>
+    <object>objects\Escarabajo_obj</object>
+    <object>objects\Repelente_normal</object>
+    <object>objects\Repelente_Super</object>
+    <object>objects\Repelente_Ultra</object>
+    <object>objects\Gas_obj</object>
+    <object>objects\Resplandor_obj</object>
+    <object>objects\Red_obj</object>
+    <object>objects\Planta_Carnivora_obj</object>
+    <object>objects\tallo_obj</object>
+    <object>objects\Maseta_obj</object>
+    <object>objects\Tienda_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
+    <room>rooms\room2</room>
     <room>rooms\room0</room>
   </rooms>
   <constants number="2">

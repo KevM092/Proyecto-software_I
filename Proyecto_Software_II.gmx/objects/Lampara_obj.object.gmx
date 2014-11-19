@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>image_speed=0.6
 alarm[0]=700
+instance_create(x,y,Resplandor_obj)
 </string>
           </argument>
         </arguments>

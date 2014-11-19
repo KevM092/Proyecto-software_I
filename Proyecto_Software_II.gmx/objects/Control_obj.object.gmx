@@ -3,9 +3,9 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-2</depth>
+  <depth>-5</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -40,6 +40,7 @@ Init_Teclas_Monedas()
 
 ////pruebas
 ////Pruebas()
+Teclas_Items()
 </string>
           </argument>
         </arguments>
@@ -85,41 +86,17 @@ Init_Teclas_Monedas()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>randomize()
-dec=irandom(3)
-if dec=0
-{
-x1=irandom_range(0,480)
-y1=-(32)
-}
-if dec=1
-{
-x1=512
-y1=irandom_range(0,720)
-}
-if dec=2
-{
-x1=irandom_range(0,480)
-y1=(752)
-}
-if dec=3
-{
-x1=-(32)
-y1=irandom_range(0,720)
-}
-if ds_queue_size(global.letras)&gt;0 &amp;&amp; global.GO==0
-{
-obj_temp=instance_create(x1,y1,Caracol)
-obj_temp.miletra=ds_queue_head(global.letras)
-ds_queue_dequeue(global.letras)
-}
-alarm[0]=200
+            <string>//if glbal.modojuego=1
+///Modo_Historia
+if global.modojuego=2
+Modo_Supervivencia()
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="50">
+    <event eventtype="6" enumb="53">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -136,7 +113,48 @@ alarm[0]=200
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(mouse_x,mouse_y,Lampara_obj)
+            <string>if itmselec=1 &amp;&amp; global.items[0]&gt;0
+{
+instance_create(mouse_x,mouse_y,Repelente_normal)
+global.items[0]-=1
+itmselec=0
+}
+if itmselec=2 &amp;&amp; global.items[1]&gt;0
+{
+instance_create(mouse_x,mouse_y,Repelente_Super)
+global.items[1]-=1
+itmselec=0
+}
+if itmselec=3 &amp;&amp; global.items[2]&gt;0
+{
+instance_create(mouse_x,mouse_y,Repelente_Ultra)
+global.items[2]-=1
+itmselec=0
+}
+if itmselec=4 &amp;&amp; global.items[3]&gt;0
+{
+instance_create(mouse_x,mouse_y,Maseta_obj)
+global.items[3]-=1
+itmselec=0
+}
+if itmselec=5 &amp;&amp; global.items[4]&gt;0
+{
+instance_create(mouse_x,mouse_y,Lampara_obj)
+global.items[4]-=1
+itmselec=0
+}
+if itmselec=6 &amp;&amp; global.items[5]&gt;0
+{
+instance_create(mouse_x,mouse_y,Red_obj)
+global.items[5]-=1
+itmselec=0
+}
+if itmselec=7 &amp;&amp; global.items[0]&gt;0
+{
+instance_create(mouse_x,mouse_y,Repelente_normal)
+global.items[0]-=1
+itmselec=0
+}
 </string>
           </argument>
         </arguments>
@@ -162,7 +180,7 @@ alarm[0]=200
             <string>if font_exists(global.fuentejuego)
 {
 font_delete(global.fuentejuego)
-show_message("Eliminado")
+//show_message("Eliminado")
 }
 </string>
           </argument>
@@ -223,6 +241,8 @@ if display_get_orientation()==display_landscape_flipped
 {
 global.direccion=180
 }
+///// 
+Control_items()
 </string>
           </argument>
         </arguments>

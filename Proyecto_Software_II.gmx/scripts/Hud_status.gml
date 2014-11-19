@@ -1,3 +1,4 @@
+draw_set_alpha(1)
 draw_background(Hud_fondo,0,0)
 draw_sprite(mini_huds_sp,0,32,24)
 draw_text_transformed(72,26,string(global.punteo),global.factor,global.factor,0)
@@ -25,11 +26,19 @@ draw_sprite(Boton_item_sp,4,48+24,672+24)
 /////cerrar
 draw_sprite(Boton_item_sp,5,96+24,672+24)
 ////
+if global.items[0]>0 alp=1 else alp=0.4 draw_set_alpha(alp)
 draw_sprite(Boton_item_sp,6,144+24,672+24)
+if global.items[1]>0 alp=1 else alp=0.4 draw_set_alpha(alp)
 draw_sprite(Boton_item_sp,7,192+24,672+24)
+if global.items[2]>0 alp=1 else alp=0.4 draw_set_alpha(alp)
 draw_sprite(Boton_item_sp,8,240+24,672+24)
+if global.items[3]>0 alp=1 else alp=0.4 draw_set_alpha(alp)
 draw_sprite(Boton_item_sp,9,288+24,672+24)
+if global.items[4]>0 alp=1 else alp=0.4 draw_set_alpha(alp)
 draw_sprite(Boton_item_sp,10,336+24,672+24)
+if global.items[5]>0 alp=1 else alp=0.4 draw_set_alpha(alp)
 draw_sprite(Boton_item_sp,11,384+24,672+24)
+if global.items[6]>0 alp=1 else alp=0.4 draw_set_alpha(alp)
 draw_sprite(Boton_item_sp,12,432+24,672+24)
-
+////
+draw_set_alpha(1)
