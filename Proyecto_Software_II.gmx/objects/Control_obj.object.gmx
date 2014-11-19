@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,48 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0]=20 ///temporizador para crear bichos
-global.punteo=0/// variable Global del punteo
-global.debugeo=-1///bandera para indicar si se esta debugeando el codigo
-global.direccion=90///direccion global
-global.fuentejuego=noone///no existe la fuente de texto apunta a null
-global.fuentejuego=font_add_sprite_ext(Num_sp,"0123456789ABCDEFGHIJKLM",false,0)///crea una nueva fuente a partir de un sprite
-global.factor=0.2 /// factor del tamaño del texto, para escalarlo
-global.monedas=0 /// variable para guardar monedas del juego
-global.GO=0////variable para contralar el fin del juego (Game Over)
-global.cantidad=100/////para guardar la cantidad de comida que queda
-obj_temp=noone /// variable temporal que puede almacenar un objeto apunta a null
-mitecla=virtual_key_add(448-16,80-16,32,32,vk_space) /// añade una nueva tecla virtual "espacio"
-device_mouse_dbclick_enable(false)/// desactiva el doble clic en los dispositivos moviles
-display_set_gui_size(480,720)/////// crea una interfaz virtual
-global.letras=ds_queue_create() //// crea una estructura de datos de tipo cola
-global.fichas=ds_queue_create() //// crea una estructura de datos de tipo cola
+            <string>Init_Control()
 /*
 aqui se encolan las teclas virtuales que seran asignadas a los bichos dinamicamente
 cada una representa una letra de la A hasta la letra que se quiera crear para la cantidad
-de bichos que puedan haber en pantalla, por ahora solo 6
+de bichos que puedan haber en pantalla, por ahora solo 12
 */
-ds_queue_enqueue(global.letras,'A')
-ds_queue_enqueue(global.letras,'B')
-ds_queue_enqueue(global.letras,'C')
-ds_queue_enqueue(global.letras,'D')
-ds_queue_enqueue(global.letras,'E')
-ds_queue_enqueue(global.letras,'F')
-ds_queue_enqueue(global.letras,'G')
-ds_queue_enqueue(global.letras,'H')
-ds_queue_enqueue(global.letras,'I')
-ds_queue_enqueue(global.letras,'J')
-ds_queue_enqueue(global.letras,'K')
-ds_queue_enqueue(global.letras,'L')
+Init_Teclas_Bichos()
 /*
 aqui se encolan las teclas virutales que van a ser asignadas a las monedas para que el usuario las presione
 solo pueden haber 5 monedas al mismo tiempo
 */
-ds_queue_enqueue(global.fichas,'V')
-ds_queue_enqueue(global.fichas,'W')
-ds_queue_enqueue(global.fichas,'X')
-ds_queue_enqueue(global.fichas,'Y')
-ds_queue_enqueue(global.fichas,'Z')
+Init_Teclas_Monedas()
+
+////pruebas
+////Pruebas()
 </string>
           </argument>
         </arguments>
@@ -141,6 +114,29 @@ obj_temp.miletra=ds_queue_head(global.letras)
 ds_queue_dequeue(global.letras)
 }
 alarm[0]=200
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="50">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_create(mouse_x,mouse_y,Lampara_obj)
 </string>
           </argument>
         </arguments>

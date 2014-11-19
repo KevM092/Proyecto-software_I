@@ -33,6 +33,8 @@
     <sprite>sprites\sprite1</sprite>
     <sprite>sprites\sprite3</sprite>
     <sprite>sprites\brillo_sp</sprite>
+    <sprite>sprites\Lampara_sp</sprite>
+    <sprite>sprites\Repelentes_sp</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -48,6 +50,10 @@
     <script>scripts\Hud_status.gml</script>
     <script>scripts\Fin_Juego.gml</script>
     <script>scripts\pulsacion_moneda.gml</script>
+    <script>scripts\Pruebas.gml</script>
+    <script>scripts\Init_Control.gml</script>
+    <script>scripts\Init_Teclas_Bichos.gml</script>
+    <script>scripts\Init_Teclas_Monedas.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\Caracol</object>
@@ -58,6 +64,8 @@
     <object>objects\Btn2</object>
     <object>objects\Moneda_obj</object>
     <object>objects\brillo_obj</object>
+    <object>objects\Lampara_obj</object>
+    <object>objects\Pariente_objetivos</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>

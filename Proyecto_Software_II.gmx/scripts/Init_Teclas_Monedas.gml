@@ -1,0 +1,5 @@
+ds_queue_enqueue(global.fichas,'V')
+ds_queue_enqueue(global.fichas,'W')
+ds_queue_enqueue(global.fichas,'X')
+ds_queue_enqueue(global.fichas,'Y')
+ds_queue_enqueue(global.fichas,'Z')

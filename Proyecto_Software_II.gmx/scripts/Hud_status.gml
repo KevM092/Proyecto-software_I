@@ -12,3 +12,24 @@ for (temp=0;temp<480;temp+=48)
 {
 draw_sprite(Boton_item_sp,0,temp+24,672+24)
 }
+///pausa del juego
+if global.pausa=false
+draw_sprite(Boton_item_sp,1,0+24,672+24)
+else
+draw_sprite(Boton_item_sp,2,0+24,672+24)
+////Sonido
+if global.sonido=true
+draw_sprite(Boton_item_sp,3,48+24,672+24)
+else
+draw_sprite(Boton_item_sp,4,48+24,672+24)
+/////cerrar
+draw_sprite(Boton_item_sp,5,96+24,672+24)
+////
+draw_sprite(Boton_item_sp,6,144+24,672+24)
+draw_sprite(Boton_item_sp,7,192+24,672+24)
+draw_sprite(Boton_item_sp,8,240+24,672+24)
+draw_sprite(Boton_item_sp,9,288+24,672+24)
+draw_sprite(Boton_item_sp,10,336+24,672+24)
+draw_sprite(Boton_item_sp,11,384+24,672+24)
+draw_sprite(Boton_item_sp,12,432+24,672+24)
+
