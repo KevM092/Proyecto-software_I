@@ -40,7 +40,7 @@
           <argument>
             <kind>1</kind>
             <string>vitalidad=4
-vel=1
+vel=2.5
 sprite_index=Escarabajo
 alarm[2]=30
 </string>
@@ -65,8 +65,9 @@ alarm[2]=30
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>mv=4
-alarm[2]=40
+            <string>vel=0
+alarm[2]=10
+image_speed=0
 </string>
           </argument>
         </arguments>
@@ -89,8 +90,9 @@ alarm[2]=40
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>vel=3
+            <string>vel=1.5
 alarm[3]=25
+image_speed=vel/5
 </string>
           </argument>
         </arguments>

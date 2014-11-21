@@ -10,6 +10,7 @@ global.pausa=false
 global.sonido=true
 global.modojuego=2///tipo de juego
 obj_temp=noone /// variable temporal que puede almacenar un objeto apunta a null
+obj_temp1=noone
 mitecla=virtual_key_add(448-16,80-16,32,32,vk_space) /// añade una nueva tecla virtual "espacio"
 device_mouse_dbclick_enable(false)/// desactiva el doble clic en los dispositivos moviles
 display_set_gui_size(480,720)/////// crea una interfaz virtual

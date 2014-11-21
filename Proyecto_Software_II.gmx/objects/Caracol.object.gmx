@@ -90,6 +90,29 @@ ds_queue_dequeue(global.fichas)
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_destroy()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
@@ -130,7 +153,8 @@ ds_queue_dequeue(global.fichas)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>mv=0
+            <string>if mv!=4
+mv=0
 image_speed=vel/4
 </string>
           </argument>
@@ -280,8 +304,11 @@ mv=3
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>mv=2
+            <string>if mv!=4
+{
+mv=2
 motion_set(0,0)
+}
 </string>
           </argument>
         </arguments>

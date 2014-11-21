@@ -149,10 +149,21 @@ instance_create(mouse_x,mouse_y,Red_obj)
 global.items[5]-=1
 itmselec=0
 }
-if itmselec=7 &amp;&amp; global.items[0]&gt;0
+if itmselec=7 &amp;&amp; global.items[6]&gt;0
 {
-instance_create(mouse_x,mouse_y,Repelente_normal)
-global.items[0]-=1
+obj_temp1=instance_create(mouse_x,mouse_y,aran_obj)
+with (obj_temp1) {motion_add(180,4)}
+///
+obj_temp1=instance_create(mouse_x,mouse_y,aran_obj)
+with (obj_temp1) {motion_add(0,4)}
+///
+obj_temp1=instance_create(mouse_x,mouse_y,aran_obj)
+with (obj_temp1) {motion_add(90,4)}
+///
+obj_temp1=instance_create(mouse_x,mouse_y,aran_obj)
+with (obj_temp1) {motion_add(270,4)}
+///
+global.items[6]-=1
 itmselec=0
 }
 </string>

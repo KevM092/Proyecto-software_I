@@ -106,14 +106,14 @@ accion=1
 {
 if accion=2
 {
-if distance_to_object(other)&lt;24
+if distance_to_object(other)&lt;16
 {
 motion_set(0,0)
 x=otemp.x
 y=otemp.y
 }
 accion=3
-alarm[1]=300
+alarm[1]=500
 }
 }
 </string>
@@ -146,7 +146,6 @@ accion=2
 comiendo=1
 sprite_index=Comiendo_sp
 with (other) {instance_destroy()}
-
 }
 </string>
           </argument>
@@ -173,7 +172,7 @@ with (other) {instance_destroy()}
             <string>if comiendo=0
 {
 alimento=instance_nearest(x,y,Caracol)
-if distance_to_object(alimento)&lt;160 &amp;&amp; instance_exists(alimento)
+if distance_to_object(alimento)&lt;140 &amp;&amp; instance_exists(alimento)
 {
 ///
 image_angle=(point_direction(x,y,alimento.x,alimento.y)+180)

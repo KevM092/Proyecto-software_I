@@ -43,6 +43,7 @@
     <sprite>sprites\Comiendo_sp</sprite>
     <sprite>sprites\Tienda_sp</sprite>
     <sprite>sprites\Boton_Compra</sprite>
+    <sprite>sprites\ar_sp</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -94,6 +95,7 @@
     <object>objects\tallo_obj</object>
     <object>objects\Maseta_obj</object>
     <object>objects\Tienda_obj</object>
+    <object>objects\aran_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
